@@ -15,31 +15,31 @@
                 <div class="p-4 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer" @click="loadConversation({{ $userId }})">
                     <div class="flex items-center">
                         <div class="w-10 h-10 bg-gray-300 dark:bg-gray-600 rounded-full flex items-center justify-center mr-3">
-                            <i class="fas fa-user text-gray-500"></i>
+                            <i class="fas fa-user text-gray-500 dark:text-gray-400"></i>
                         </div>
                         <div>
                             <p class="font-medium text-sm">{{ $otherUser->name }}</p>
-                            <p class="text-xs text-gray-500">{{ $otherUser->email }}</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">{{ $otherUser->email }}</p>
                         </div>
                     </div>
                 </div>
                 @endif
             @empty
-                <div class="p-4 text-center text-gray-500 text-sm">No conversations yet.</div>
+                <div class="p-4 text-center text-gray-500 dark:text-gray-400 text-sm">No conversations yet.</div>
             @endforelse
         </div>
     </div>
 
     <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-lg shadow flex flex-col h-[600px]">
         <div class="p-4 border-b dark:border-gray-700" id="chatHeader">
-            <p class="text-gray-500 text-center">Select a conversation to start chatting</p>
+            <p class="text-gray-500 dark:text-gray-400 text-center">Select a conversation to start chatting</p>
         </div>
         <div class="flex-1 overflow-y-auto p-4 space-y-4" id="chatMessages">
         </div>
         <div class="p-4 border-t dark:border-gray-700">
             <form @submit.prevent="sendMessage" class="flex space-x-2">
                 <input type="hidden" name="receiver_id" x-model="receiverId">
-                <input type="text" x-model="messageText" placeholder="Type a message..." class="flex-1 px-4 py-2 border rounded focus:outline-none" required>
+                <input type="text" x-model="messageText" placeholder="Type a message..." class="flex-1 px-4 py-2 border dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded focus:outline-none" required>
                 <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"><i class="fas fa-paper-plane"></i></button>
             </form>
         </div>
@@ -65,7 +65,7 @@ function messaging() {
                                 <div class="max-w-md p-3 rounded-lg ${isMine ? 'bg-blue-600 text-white' : 'bg-gray-100 dark:bg-gray-700'}">
                                     <p>${msg.message || ''}</p>
                                     ${msg.file_path ? `<a href="/storage/${msg.file_path}" target="_blank" class="text-sm underline">View file</a>` : ''}
-                                    <p class="text-xs mt-1 ${isMine ? 'text-blue-200' : 'text-gray-500'}">${new Date(msg.created_at).toLocaleString()}</p>
+                                    <p class="text-xs mt-1 ${isMine ? 'text-blue-200' : 'text-gray-500 dark:text-gray-400'}">${new Date(msg.created_at).toLocaleString()}</p>
                                 </div>
                             </div>
                         `;

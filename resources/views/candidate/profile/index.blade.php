@@ -12,19 +12,19 @@
                 @if($candidate->profile_picture)
                     <img src="{{ asset('storage/' . $candidate->profile_picture) }}" class="w-20 h-20 rounded-full mr-4">
                 @else
-                    <div class="w-20 h-20 bg-gray-200 dark:bg-gray-700 rounded-full mr-4 flex items-center justify-center"><i class="fas fa-user text-2xl text-gray-400"></i></div>
+                    <div class="w-20 h-20 bg-gray-200 dark:bg-gray-700 rounded-full mr-4 flex items-center justify-center"><i class="fas fa-user text-2xl text-gray-400 dark:text-gray-300"></i></div>
                 @endif
                 <div><label class="block text-sm font-medium mb-2">Profile Picture</label><input type="file" name="profile_picture" accept="image/*" class="text-sm"></div>
             </div>
             <div class="grid grid-cols-2 gap-4">
                 <div><label class="block text-sm font-medium mb-2">Name</label>
-                    <input type="text" value="{{ $candidate->user->name }}" class="w-full px-3 py-2 border rounded bg-gray-50" disabled></div>
+                    <input type="text" value="{{ $candidate->user->name }}" class="w-full px-3 py-2 border rounded bg-gray-50 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600" disabled></div>
                 <div><label class="block text-sm font-medium mb-2">Email</label>
-                    <input type="email" value="{{ $candidate->user->email }}" class="w-full px-3 py-2 border rounded bg-gray-50" disabled></div>
+                    <input type="email" value="{{ $candidate->user->email }}" class="w-full px-3 py-2 border rounded bg-gray-50 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600" disabled></div>
                 <div><label class="block text-sm font-medium mb-2">Phone</label>
-                    <input type="text" name="phone" value="{{ old('phone', $candidate->phone) }}" class="w-full px-3 py-2 border rounded"></div>
+                    <input type="text" name="phone" value="{{ old('phone', $candidate->phone) }}" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600"></div>
                 <div><label class="block text-sm font-medium mb-2">Skills</label>
-                    <input type="text" name="skills" value="{{ old('skills', $candidate->skills) }}" class="w-full px-3 py-2 border rounded" placeholder="e.g. PHP, Laravel, MySQL"></div>
+                    <input type="text" name="skills" value="{{ old('skills', $candidate->skills) }}" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600" placeholder="e.g. PHP, Laravel, MySQL"></div>
                 <div class="col-span-2"><label class="block text-sm font-medium mb-2">Education</label>
                     <textarea name="education" rows="3" class="w-full px-3 py-2 border rounded">{{ old('education', $candidate->education) }}</textarea></div>
                 <div class="col-span-2"><label class="block text-sm font-medium mb-2">Experience</label>

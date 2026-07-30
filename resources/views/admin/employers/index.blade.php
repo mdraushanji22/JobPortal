@@ -5,7 +5,7 @@
 @section('content')
 <div class="flex justify-between items-center mb-6">
     <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Employers</h1>
-    <a href="{{ route('admin.employers.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition">
+    <a href="{{ route('admin.employers.create') }}" class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 text-white px-4 py-2 rounded transition">
         <i class="fas fa-plus mr-2"></i>Add Employer
     </a>
 </div>
@@ -30,7 +30,7 @@
                             <img src="{{ asset('storage/' . $employer->logo) }}" class="w-10 h-10 rounded-full mr-3">
                         @else
                             <div class="w-10 h-10 bg-gray-300 dark:bg-gray-600 rounded-full mr-3 flex items-center justify-center">
-                                <i class="fas fa-building text-gray-500"></i>
+                                <i class="fas fa-building text-gray-500 dark:text-gray-300"></i>
                             </div>
                         @endif
                         <div>
@@ -43,9 +43,9 @@
                 <td class="px-6 py-4 text-gray-600 dark:text-gray-400">{{ $employer->industry ?? 'N/A' }}</td>
                 <td class="px-6 py-4">
                     @if($employer->is_verified)
-                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Verified</span>
+                        <span class="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-2 py-1 rounded text-xs">Verified</span>
                     @else
-                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Unverified</span>
+                        <span class="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 px-2 py-1 rounded text-xs">Unverified</span>
                     @endif
                 </td>
                 <td class="px-6 py-4">

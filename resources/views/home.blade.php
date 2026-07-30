@@ -6,8 +6,8 @@
         <h1 class="text-5xl font-bold mb-4">Find Your Dream Job</h1>
         <p class="text-xl mb-8 text-blue-100">Browse thousands of jobs from top companies</p>
         <form action="{{ route('candidate.jobs.index') }}" method="GET" class="max-w-3xl mx-auto">
-            <div class="flex gap-2 bg-white rounded-lg p-2 shadow-lg">
-                <input type="text" name="search" placeholder="Search jobs, skills, companies..." class="flex-1 px-4 py-3 text-gray-800 rounded focus:outline-none">
+            <div class="flex gap-2 bg-white dark:bg-gray-800 rounded-lg p-2 shadow-lg">
+                <input type="text" name="search" placeholder="Search jobs, skills, companies..." class="flex-1 px-4 py-3 text-gray-800 dark:text-white rounded focus:outline-none">
                 <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded font-semibold transition">Search</button>
             </div>
         </form>
@@ -41,14 +41,14 @@
                     <p class="text-gray-600 dark:text-gray-400">{{ $job->employer->company_name }}</p>
                 </div>
                 @if($job->is_featured)
-                    <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Featured</span>
+                    <span class="bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 text-xs px-2 py-1 rounded">Featured</span>
                 @endif
             </div>
             <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">{{ $job->employment_type }}</span>
-                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">{{ $job->workplace_type }}</span>
+                <span class="bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-xs px-2 py-1 rounded">{{ $job->employment_type }}</span>
+                <span class="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 text-xs px-2 py-1 rounded">{{ $job->workplace_type }}</span>
                 @if($job->location)
-                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">{{ $job->location }}</span>
+                <span class="bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300 text-xs px-2 py-1 rounded">{{ $job->location }}</span>
                 @endif
             </div>
             <div class="flex items-center justify-between">

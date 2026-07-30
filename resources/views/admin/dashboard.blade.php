@@ -61,7 +61,7 @@
     </div>
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
         <h3 class="text-gray-500 dark:text-gray-400 mb-2">Today's Applications</h3>
-        <p class="text-3xl font-bold text-blue-600">{{ $todayApplications }}</p>
+        <p class="text-3xl font-bold text-blue-600 dark:text-blue-400">{{ $todayApplications }}</p>
     </div>
 </div>
 
