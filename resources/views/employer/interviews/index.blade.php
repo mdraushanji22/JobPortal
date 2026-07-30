@@ -3,11 +3,11 @@
 @section('title', 'Interviews')
 
 @section('content')
-<h1 class="text-2xl font-bold mb-6">Scheduled Interviews</h1>
+<h1 class="text-2xl font-bold mb-6 dark:text-white">Scheduled Interviews</h1>
 <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
     <table class="w-full">
         <thead class="bg-gray-50 dark:bg-gray-700">
-            <tr><th class="px-6 py-3 text-left text-xs font-medium uppercase">Candidate</th><th class="px-6 py-3 text-left text-xs font-medium uppercase">Job</th><th class="px-6 py-3 text-left text-xs font-medium uppercase">Date</th><th class="px-6 py-3 text-left text-xs font-medium uppercase">Time</th><th class="px-6 py-3 text-left text-xs font-medium uppercase">Type</th><th class="px-6 py-3 text-left text-xs font-medium uppercase">Status</th><th class="px-6 py-3 text-left text-xs font-medium uppercase">Action</th></tr>
+            <tr><th class="px-6 py-3 text-left text-xs font-medium uppercase dark:text-gray-300">Candidate</th><th class="px-6 py-3 text-left text-xs font-medium uppercase dark:text-gray-300">Job</th><th class="px-6 py-3 text-left text-xs font-medium uppercase dark:text-gray-300">Date</th><th class="px-6 py-3 text-left text-xs font-medium uppercase dark:text-gray-300">Time</th><th class="px-6 py-3 text-left text-xs font-medium uppercase dark:text-gray-300">Type</th><th class="px-6 py-3 text-left text-xs font-medium uppercase dark:text-gray-300">Status</th><th class="px-6 py-3 text-left text-xs font-medium uppercase dark:text-gray-300">Action</th></tr>
         </thead>
         <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
             @foreach($interviews as $interview)
@@ -17,11 +17,11 @@
                 <td class="px-6 py-4">{{ $interview->scheduled_date->format('M d, Y') }}</td>
                 <td class="px-6 py-4">{{ $interview->scheduled_time }}</td>
                 <td class="px-6 py-4">{{ ucfirst($interview->interview_type) }}</td>
-                <td class="px-6 py-4"><span class="px-2 py-1 rounded text-xs bg-{{ $interview->status == 'scheduled' ? 'blue' : ($interview->status == 'completed' ? 'green' : 'red') }}-100">{{ $interview->status }}</span></td>
+                <td class="px-6 py-4"><span class="px-2 py-1 rounded text-xs bg-{{ $interview->status == 'scheduled' ? 'blue' : ($interview->status == 'completed' ? 'green' : 'red') }}-100 text-{{ $interview->status == 'scheduled' ? 'blue' : ($interview->status == 'completed' ? 'green' : 'red') }}-800 dark:bg-{{ $interview->status == 'scheduled' ? 'blue' : ($interview->status == 'completed' ? 'green' : 'red') }}-900/30 dark:text-{{ $interview->status == 'scheduled' ? 'blue' : ($interview->status == 'completed' ? 'green' : 'red') }}-300">{{ $interview->status }}</span></td>
                 <td class="px-6 py-4">
                     <form action="{{ route('employer.interviews.status', $interview) }}" method="POST" class="inline">
                         @csrf
-                        <select name="status" onchange="this.form.submit()" class="px-2 py-1 border rounded text-sm">
+                        <select name="status" onchange="this.form.submit()" class="px-2 py-1 border rounded text-sm dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600">
                             <option value="scheduled" disabled {{ $interview->status == 'scheduled' ? 'selected' : '' }}>Scheduled</option>
                             <option value="completed" {{ $interview->status == 'completed' ? 'selected' : '' }}>Complete</option>
                             <option value="cancelled" {{ $interview->status == 'cancelled' ? 'selected' : '' }}>Cancel</option>

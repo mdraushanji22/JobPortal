@@ -9,21 +9,21 @@
 <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 mb-4">
     <div class="flex justify-between items-start">
         <div>
-            <h3 class="text-xl font-semibold"><a href="{{ route('candidate.jobs.show', $saved->jobListing) }}" class="text-gray-800 dark:text-white hover:text-blue-600">{{ $saved->jobListing->title }}</a></h3>
+            <h3 class="text-xl font-semibold"><a href="{{ route('candidate.jobs.show', $saved->jobListing) }}" class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400">{{ $saved->jobListing->title }}</a></h3>
             <p class="text-gray-600 dark:text-gray-400">{{ $saved->jobListing->employer->company_name }}</p>
             <div class="flex flex-wrap gap-2 mt-2">
-                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">{{ $saved->jobListing->employment_type }}</span>
-                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">{{ $saved->jobListing->workplace_type }}</span>
-                @if($saved->jobListing->location)<span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">{{ $saved->jobListing->location }}</span>@endif
+                <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-xs px-2 py-1 rounded">{{ $saved->jobListing->employment_type }}</span>
+                <span class="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs px-2 py-1 rounded">{{ $saved->jobListing->workplace_type }}</span>
+                @if($saved->jobListing->location)<span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 text-xs px-2 py-1 rounded">{{ $saved->jobListing->location }}</span>@endif
             </div>
         </div>
         <form action="{{ route('candidate.saved-jobs.remove', $saved) }}" method="POST" class="inline">@csrf @method('DELETE')
-            <button type="submit" class="text-red-500 hover:text-red-700"><i class="fas fa-bookmark"></i></button>
+            <button type="submit" class="text-red-500 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300"><i class="fas fa-bookmark"></i></button>
         </form>
     </div>
 </div>
 @empty
-<div class="text-center py-12 text-gray-500">No saved jobs yet. <a href="{{ route('candidate.jobs.index') }}" class="text-blue-600 underline">Browse jobs</a></div>
+<div class="text-center py-12 text-gray-500 dark:text-gray-400">No saved jobs yet. <a href="{{ route('candidate.jobs.index') }}" class="text-blue-600 dark:text-blue-400 underline">Browse jobs</a></div>
 @endforelse
 
 <div class="mt-6">{{ $savedJobs->links() }}</div>

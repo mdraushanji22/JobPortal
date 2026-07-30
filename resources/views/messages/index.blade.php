@@ -39,7 +39,7 @@
         <div class="p-4 border-t dark:border-gray-700">
             <form @submit.prevent="sendMessage" class="flex space-x-2">
                 <input type="hidden" name="receiver_id" x-model="receiverId">
-                <input type="text" x-model="messageText" placeholder="Type a message..." class="flex-1 px-4 py-2 border dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded focus:outline-none" required>
+                <input type="text" x-model="messageText" placeholder="Type a message..." class="flex-1 px-4 py-2 border dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400 rounded focus:outline-none" required>
                 <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"><i class="fas fa-paper-plane"></i></button>
             </form>
         </div>

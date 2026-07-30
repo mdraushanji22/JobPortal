@@ -24,19 +24,19 @@
                 <div><label class="block text-sm font-medium mb-2">Phone</label>
                     <input type="text" name="phone" value="{{ old('phone', $candidate->phone) }}" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600"></div>
                 <div><label class="block text-sm font-medium mb-2">Skills</label>
-                    <input type="text" name="skills" value="{{ old('skills', $candidate->skills) }}" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600" placeholder="e.g. PHP, Laravel, MySQL"></div>
+                    <input type="text" name="skills" value="{{ old('skills', $candidate->skills) }}" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400 dark:border-gray-600" placeholder="e.g. PHP, Laravel, MySQL"></div>
                 <div class="col-span-2"><label class="block text-sm font-medium mb-2">Education</label>
-                    <textarea name="education" rows="3" class="w-full px-3 py-2 border rounded">{{ old('education', $candidate->education) }}</textarea></div>
+                    <textarea name="education" rows="3" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600">{{ old('education', $candidate->education) }}</textarea></div>
                 <div class="col-span-2"><label class="block text-sm font-medium mb-2">Experience</label>
-                    <textarea name="experience" rows="3" class="w-full px-3 py-2 border rounded">{{ old('experience', $candidate->experience) }}</textarea></div>
+                    <textarea name="experience" rows="3" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600">{{ old('experience', $candidate->experience) }}</textarea></div>
                 <div><label class="block text-sm font-medium mb-2">Portfolio URL</label>
-                    <input type="url" name="portfolio_url" value="{{ old('portfolio_url', $candidate->portfolio_url) }}" class="w-full px-3 py-2 border rounded"></div>
+                    <input type="url" name="portfolio_url" value="{{ old('portfolio_url', $candidate->portfolio_url) }}" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600"></div>
                 <div><label class="block text-sm font-medium mb-2">LinkedIn URL</label>
-                    <input type="url" name="linkedin_url" value="{{ old('linkedin_url', $candidate->linkedin_url) }}" class="w-full px-3 py-2 border rounded"></div>
+                    <input type="url" name="linkedin_url" value="{{ old('linkedin_url', $candidate->linkedin_url) }}" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600"></div>
                 <div><label class="block text-sm font-medium mb-2">GitHub URL</label>
-                    <input type="url" name="github_url" value="{{ old('github_url', $candidate->github_url) }}" class="w-full px-3 py-2 border rounded"></div>
+                    <input type="url" name="github_url" value="{{ old('github_url', $candidate->github_url) }}" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600"></div>
                 <div class="col-span-2"><label class="block text-sm font-medium mb-2">Bio</label>
-                    <textarea name="bio" rows="3" class="w-full px-3 py-2 border rounded">{{ old('bio', $candidate->bio) }}</textarea></div>
+                    <textarea name="bio" rows="3" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600">{{ old('bio', $candidate->bio) }}</textarea></div>
             </div>
             <div class="mt-6 flex justify-end">
                 <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Update Profile</button>

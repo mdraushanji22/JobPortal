@@ -50,18 +50,18 @@
                 </td>
                 <td class="px-6 py-4">
                     <div class="flex space-x-2">
-                        <a href="{{ route('admin.employers.edit', $employer) }}" class="text-blue-600 hover:text-blue-800"><i class="fas fa-edit"></i></a>
+                        <a href="{{ route('admin.employers.edit', $employer) }}" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"><i class="fas fa-edit"></i></a>
                         <form action="{{ route('admin.employers.verify', $employer) }}" method="POST" class="inline">
                             @csrf
-                            <button type="submit" class="text-green-600 hover:text-green-800"><i class="fas fa-check-circle"></i></button>
+                            <button type="submit" class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300"><i class="fas fa-check-circle"></i></button>
                         </form>
                         <form action="{{ route('admin.employers.suspend', $employer) }}" method="POST" class="inline">
                             @csrf
-                            <button type="submit" class="text-yellow-600 hover:text-yellow-800"><i class="fas fa-ban"></i></button>
+                            <button type="submit" class="text-yellow-600 dark:text-yellow-400 hover:text-yellow-800 dark:hover:text-yellow-300"><i class="fas fa-ban"></i></button>
                         </form>
                         <form action="{{ route('admin.employers.destroy', $employer) }}" method="POST" class="inline" onsubmit="return confirm('Delete?')">
                             @csrf @method('DELETE')
-                            <button type="submit" class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button>
+                            <button type="submit" class="text-red-600 dark:text-red-400 hover:text-red-800 dark:hover:text-red-300"><i class="fas fa-trash"></i></button>
                         </form>
                     </div>
                 </td>

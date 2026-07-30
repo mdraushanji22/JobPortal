@@ -5,24 +5,24 @@
 @section('content')
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <h2 class="text-lg font-semibold mb-4">Monthly Jobs Report</h2>
+        <h2 class="text-lg font-semibold mb-4 dark:text-white">Monthly Jobs Report</h2>
         <canvas id="jobsChart" height="200"></canvas>
     </div>
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <h2 class="text-lg font-semibold mb-4">Monthly Applications Report</h2>
+        <h2 class="text-lg font-semibold mb-4 dark:text-white">Monthly Applications Report</h2>
         <canvas id="applicationsChart" height="200"></canvas>
     </div>
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <h2 class="text-lg font-semibold mb-4">Employer Report</h2>
-        <table class="w-full"><thead><tr><th class="text-left py-2">Company</th><th class="text-left py-2">Jobs</th></tr></thead><tbody>
+        <h2 class="text-lg font-semibold mb-4 dark:text-white">Employer Report</h2>
+        <table class="w-full dark:text-gray-300"><thead><tr><th class="text-left py-2">Company</th><th class="text-left py-2">Jobs</th></tr></thead><tbody>
         @foreach($employers as $emp)
         <tr><td class="py-1">{{ $emp->company_name }}</td><td>{{ $emp->jobListings->count() }}</td></tr>
         @endforeach
         </tbody></table>
     </div>
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <h2 class="text-lg font-semibold mb-4">Candidate Report</h2>
-        <table class="w-full"><thead><tr><th class="text-left py-2">Name</th><th class="text-left py-2">Applications</th></tr></thead><tbody>
+        <h2 class="text-lg font-semibold mb-4 dark:text-white">Candidate Report</h2>
+        <table class="w-full dark:text-gray-300"><thead><tr><th class="text-left py-2">Name</th><th class="text-left py-2">Applications</th></tr></thead><tbody>
         @foreach($candidates as $can)
         <tr><td class="py-1">{{ $can->user->name }}</td><td>{{ $can->applications->count() }}</td></tr>
         @endforeach

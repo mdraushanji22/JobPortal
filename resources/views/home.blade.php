@@ -7,7 +7,7 @@
         <p class="text-xl mb-8 text-blue-100">Browse thousands of jobs from top companies</p>
         <form action="{{ route('candidate.jobs.index') }}" method="GET" class="max-w-3xl mx-auto">
             <div class="flex gap-2 bg-white dark:bg-gray-800 rounded-lg p-2 shadow-lg">
-                <input type="text" name="search" placeholder="Search jobs, skills, companies..." class="flex-1 px-4 py-3 text-gray-800 dark:text-white rounded focus:outline-none">
+                <input type="text" name="search" placeholder="Search jobs, skills, companies..." class="flex-1 px-4 py-3 text-gray-800 dark:text-white dark:placeholder-gray-400 rounded focus:outline-none">
                 <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded font-semibold transition">Search</button>
             </div>
         </form>
