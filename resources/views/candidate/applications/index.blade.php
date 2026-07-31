@@ -29,6 +29,7 @@
                             <button type="submit" class="text-red-600 dark:text-red-400 hover:text-red-800 dark:hover:text-red-300 text-sm">Withdraw</button>
                         </form>
                         @endif
+                        <a href="{{ route('messages.open', $app) }}" class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 text-sm"><i class="fas fa-comments mr-1"></i>Message</a>
                         @if($app->interview)
                             <span class="text-green-600 dark:text-green-400 text-sm"><i class="fas fa-calendar-check mr-1"></i>Interview: {{ $app->interview->scheduled_date->format('M d') }}</span>
                         @endif

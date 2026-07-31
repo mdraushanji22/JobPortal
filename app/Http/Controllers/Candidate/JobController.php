@@ -65,16 +65,18 @@ class JobController extends Controller
         }
         
         $candidate = Auth::user()->candidate;
+        $application = null;
         $hasApplied = false;
         $isSaved = false;
         
         if ($candidate) {
-            $hasApplied = Application::where('job_listing_id', $job->id)
-                ->where('candidate_id', $candidate->id)->exists();
+            $application = Application::where('job_listing_id', $job->id)
+                ->where('candidate_id', $candidate->id)->first();
+            $hasApplied = (bool) $application;
             $isSaved = SavedJob::where('job_listing_id', $job->id)
                 ->where('candidate_id', $candidate->id)->exists();
         }
 
-        return view('candidate.jobs.show', compact('job', 'hasApplied', 'isSaved'));
+        return view('candidate.jobs.show', compact('job', 'application', 'hasApplied', 'isSaved'));
     }
 }

@@ -103,8 +103,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Messaging
     Route::get('/messages', [MessageController::class, 'index'])->name('messages.index');
-    Route::get('/messages/conversation/{user}', [MessageController::class, 'conversation'])->name('messages.conversation');
+    Route::get('/messages/with/{application}', [MessageController::class, 'open'])->name('messages.open');
+    Route::get('/messages/conversation/{conversation}', [MessageController::class, 'conversation'])->name('messages.conversation');
     Route::post('/messages/send', [MessageController::class, 'send'])->name('messages.send');
+    Route::get('/messages/attachment/{message}/download', [MessageController::class, 'download'])->name('messages.download');
+    Route::get('/messages/attachment/{message}', [MessageController::class, 'preview'])->name('messages.attachment');
 });
 
 require __DIR__.'/auth.php';

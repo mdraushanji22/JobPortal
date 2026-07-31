@@ -68,6 +68,7 @@
                 @if(Auth::user()->isCandidate())
                     @if($hasApplied)
                         <button disabled class="px-6 py-3 bg-gray-400 dark:bg-gray-600 text-white rounded cursor-not-allowed">Already Applied</button>
+                        <a href="{{ route('messages.open', $application) }}" class="px-6 py-3 border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 rounded hover:bg-blue-50 dark:hover:bg-blue-900/30 transition"><i class="fas fa-comments mr-2"></i>Message Employer</a>
                     @else
                         <a href="{{ route('candidate.applications.create', $job) }}" class="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition"><i class="fas fa-paper-plane mr-2"></i>Apply Now</a>
                     @endif

@@ -32,7 +32,7 @@
                 <td class="px-6 py-4">{{ $app->jobListing->title }}</td>
                 <td class="px-6 py-4"><span class="px-2 py-1 rounded text-xs bg-{{ $app->status == 'applied' ? 'blue' : ($app->status == 'shortlisted' ? 'yellow' : ($app->status == 'selected' ? 'green' : ($app->status == 'interview_scheduled' ? 'purple' : 'red'))) }}-100 text-{{ $app->status == 'applied' ? 'blue' : ($app->status == 'shortlisted' ? 'yellow' : ($app->status == 'selected' ? 'green' : ($app->status == 'interview_scheduled' ? 'purple' : 'red'))) }}-800 dark:bg-{{ $app->status == 'applied' ? 'blue' : ($app->status == 'shortlisted' ? 'yellow' : ($app->status == 'selected' ? 'green' : ($app->status == 'interview_scheduled' ? 'purple' : 'red'))) }}-900/30 dark:text-{{ $app->status == 'applied' ? 'blue' : ($app->status == 'shortlisted' ? 'yellow' : ($app->status == 'selected' ? 'green' : ($app->status == 'interview_scheduled' ? 'purple' : 'red'))) }}-300">{{ str_replace('_', ' ', $app->status) }}</span></td>
                 <td class="px-6 py-4">{{ $app->created_at->format('M d, Y') }}</td>
-                <td class="px-6 py-4"><a href="{{ route('employer.applications.show', $app) }}" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"><i class="fas fa-eye"></i></a></td>
+                <td class="px-6 py-4"><a href="{{ route('employer.applications.show', $app) }}" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"><i class="fas fa-eye"></i></a> <a href="{{ route('messages.open', $app) }}" class="text-green-600 hover:text-green-800 dark:text-green-400 dark:hover:text-green-300 ml-2" title="Message"><i class="fas fa-comments"></i></a></td>
             </tr>
             @endforeach
         </tbody>

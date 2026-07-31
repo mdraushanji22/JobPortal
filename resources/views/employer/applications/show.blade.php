@@ -7,6 +7,7 @@
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-2xl font-bold dark:text-white">Application Details</h1>
         <div class="flex space-x-2">
+            <a href="{{ route('messages.open', $application) }}" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"><i class="fas fa-comments mr-1"></i>Message</a>
             <form action="{{ route('employer.applications.status', $application) }}" method="POST" class="inline">
                 @csrf
                 <select name="status" onchange="this.form.submit()" class="px-3 py-2 border rounded dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600">
