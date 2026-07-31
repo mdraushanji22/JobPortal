@@ -43,8 +43,9 @@ class ResumeController extends Controller
 
     public function setDefault(Resume $resume)
     {
-        if ($resume->candidate_id !== Auth::user()->candidate->id) abort(403);
-        
+        $candidate = Auth::user()->candidate;
+        if (!$candidate || $resume->candidate_id !== $candidate->id) abort(403);
+
         Resume::where('candidate_id', $resume->candidate_id)->update(['is_default' => false]);
         $resume->update(['is_default' => true]);
 
@@ -53,8 +54,9 @@ class ResumeController extends Controller
 
     public function destroy(Resume $resume)
     {
-        if ($resume->candidate_id !== Auth::user()->candidate->id) abort(403);
-        
+        $candidate = Auth::user()->candidate;
+        if (!$candidate || $resume->candidate_id !== $candidate->id) abort(403);
+
         Storage::disk('public')->delete($resume->file_path);
         $resume->delete();
 
@@ -63,11 +65,13 @@ class ResumeController extends Controller
 
     public function download(Resume $resume)
     {
-        if ($resume->candidate_id !== Auth::user()->candidate->id && 
-            !Auth::user()->isEmployer() && !Auth::user()->isAdmin()) {
+        $user = Auth::user();
+        $isOwner = $user->isCandidate() && $user->candidate && $resume->candidate_id === $user->candidate->id;
+
+        if (!$isOwner && !$user->isEmployer() && !$user->isAdmin()) {
             abort(403);
         }
-        
+
         return Storage::disk('public')->download($resume->file_path, $resume->title . '.' . $resume->file_type);
     }
 }

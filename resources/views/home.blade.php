@@ -5,7 +5,7 @@
     <div class="max-w-7xl mx-auto px-4 text-center">
         <h1 class="text-5xl font-bold mb-4">Find Your Dream Job</h1>
         <p class="text-xl mb-8 text-blue-100">Browse thousands of jobs from top companies</p>
-        <form action="{{ route('candidate.jobs.index') }}" method="GET" class="max-w-3xl mx-auto">
+        <form action="{{ route('jobs.index') }}" method="GET" class="max-w-3xl mx-auto">
             <div class="flex gap-2 bg-white dark:bg-gray-800 rounded-lg p-2 shadow-lg">
                 <input type="text" name="search" placeholder="Search jobs, skills, companies..." class="flex-1 px-4 py-3 text-gray-800 dark:text-white dark:placeholder-gray-400 rounded focus:outline-none">
                 <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded font-semibold transition">Search</button>
@@ -55,7 +55,7 @@
                 @if($job->salary_min)
                 <span class="text-green-600 font-semibold">${{ number_format($job->salary_min) }} - ${{ number_format($job->salary_max) }}/{{ $job->salary_type }}</span>
                 @endif
-                <a href="{{ route('candidate.jobs.show', $job) }}" class="text-blue-600 hover:text-blue-800 font-semibold">View Details &rarr;</a>
+                <a href="{{ route('jobs.show', $job) }}" class="text-blue-600 hover:text-blue-800 font-semibold">View Details &rarr;</a>
             </div>
         </div>
         @endforeach
@@ -66,7 +66,7 @@
     <h2 class="text-3xl font-bold mt-16 mb-8 text-gray-800 dark:text-white">Browse by Category</h2>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         @foreach($categories as $category)
-        <a href="{{ route('candidate.jobs.index', ['category' => $category->id]) }}" class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 text-center hover:shadow-lg transition">
+        <a href="{{ route('jobs.index', ['category' => $category->id]) }}" class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 text-center hover:shadow-lg transition">
             <div class="text-2xl font-bold text-blue-600 mb-1">{{ $category->job_listings_count }}</div>
             <div class="text-gray-600 dark:text-gray-400">{{ $category->name }}</div>
         </a>
