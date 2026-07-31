@@ -18,6 +18,9 @@
         <a href="{{ route('employer.interviews.index') }}" class="flex items-center p-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded transition {{ request()->routeIs('employer.interviews.*') ? 'bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400' : '' }}">
             <i class="fas fa-calendar-check w-5"></i><span class="ml-3">Interviews</span>
         </a>
+        <a href="{{ route('employer.letters.index') }}" class="flex items-center p-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded transition {{ request()->routeIs('employer.letters.*') ? 'bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400' : '' }}">
+            <i class="fas fa-envelope-open-text w-5"></i><span class="ml-3">Offer & Joining Letters</span>
+        </a>
         <a href="{{ route('messages.index') }}" class="flex items-center p-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded transition {{ request()->routeIs('messages.*') ? 'bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400' : '' }}">
             <i class="fas fa-comments w-5"></i><span class="ml-3">Messages</span>
         </a>

@@ -7,4 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Setting extends Model
 {
     protected $fillable = ['key', 'value'];
+
+    public static function getSetting(string $key, $default = null)
+    {
+        $setting = static::where('key', $key)->first();
+
+        return $setting ? $setting->value : $default;
+    }
 }

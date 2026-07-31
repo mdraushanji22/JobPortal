@@ -42,6 +42,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/applications', [App\Http\Controllers\Admin\ApplicationController::class, 'index'])->name('applications.index');
         Route::get('/applications/{application}', [App\Http\Controllers\Admin\ApplicationController::class, 'show'])->name('applications.show');
 
+        Route::get('/letters', [App\Http\Controllers\Admin\LetterController::class, 'index'])->name('letters.index');
+        Route::get('/letters/{letter}', [App\Http\Controllers\Admin\LetterController::class, 'show'])->name('letters.show');
+        Route::get('/letters/{letter}/pdf', [App\Http\Controllers\Admin\LetterController::class, 'pdf'])->name('letters.pdf');
+        Route::post('/letters/{letter}/archive', [App\Http\Controllers\Admin\LetterController::class, 'archive'])->name('letters.archive');
+        Route::delete('/letters/{letter}', [App\Http\Controllers\Admin\LetterController::class, 'destroy'])->name('letters.destroy');
+
         Route::get('/reports', [App\Http\Controllers\Admin\ReportController::class, 'index'])->name('reports.index');
 
         Route::get('/settings', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('settings.index');
@@ -71,6 +77,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         Route::get('/interviews', [App\Http\Controllers\Employer\InterviewController::class, 'index'])->name('interviews.index');
         Route::post('/interviews/{interview}/status', [App\Http\Controllers\Employer\InterviewController::class, 'updateStatus'])->name('interviews.status');
+
+        Route::get('/letters', [App\Http\Controllers\Employer\LetterController::class, 'index'])->name('letters.index');
+        Route::get('/letters/create/{application}', [App\Http\Controllers\Employer\LetterController::class, 'create'])->name('letters.create');
+        Route::post('/letters', [App\Http\Controllers\Employer\LetterController::class, 'store'])->name('letters.store');
+        Route::get('/letters/{letter}', [App\Http\Controllers\Employer\LetterController::class, 'show'])->name('letters.show');
+        Route::get('/letters/{letter}/edit', [App\Http\Controllers\Employer\LetterController::class, 'edit'])->name('letters.edit');
+        Route::put('/letters/{letter}', [App\Http\Controllers\Employer\LetterController::class, 'update'])->name('letters.update');
+        Route::post('/letters/{letter}/send', [App\Http\Controllers\Employer\LetterController::class, 'send'])->name('letters.send');
+        Route::get('/letters/{letter}/pdf', [App\Http\Controllers\Employer\LetterController::class, 'pdf'])->name('letters.pdf');
+        Route::post('/letters/{letter}/regenerate', [App\Http\Controllers\Employer\LetterController::class, 'regenerate'])->name('letters.regenerate');
+        Route::delete('/letters/{letter}', [App\Http\Controllers\Employer\LetterController::class, 'destroy'])->name('letters.destroy');
     });
 
     // Candidate Routes
@@ -96,6 +113,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/saved-jobs', [App\Http\Controllers\Candidate\SavedJobController::class, 'index'])->name('saved-jobs.index');
         Route::post('/saved-jobs/{job}/toggle', [App\Http\Controllers\Candidate\SavedJobController::class, 'toggle'])->name('saved-jobs.toggle');
         Route::delete('/saved-jobs/{savedJob}', [App\Http\Controllers\Candidate\SavedJobController::class, 'remove'])->name('saved-jobs.remove');
+
+        Route::get('/letters', [App\Http\Controllers\Candidate\LetterController::class, 'index'])->name('letters.index');
+        Route::get('/letters/{letter}', [App\Http\Controllers\Candidate\LetterController::class, 'show'])->name('letters.show');
+        Route::get('/letters/{letter}/pdf', [App\Http\Controllers\Candidate\LetterController::class, 'pdf'])->name('letters.pdf');
+
+        Route::get('/notifications', [App\Http\Controllers\Candidate\NotificationController::class, 'index'])->name('notifications.index');
+        Route::post('/notifications/{notification}/read', [App\Http\Controllers\Candidate\NotificationController::class, 'read'])->name('notifications.read');
+        Route::post('/notifications/read-all', [App\Http\Controllers\Candidate\NotificationController::class, 'readAll'])->name('notifications.read-all');
     });
 
     // Resume Download (accessible by employer & candidate)

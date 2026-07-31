@@ -36,4 +36,9 @@ class Candidate extends Model
     {
         return $this->hasMany(Interview::class);
     }
+
+    public function letters()
+    {
+        return $this->hasMany(Letter::class);
+    }
 }

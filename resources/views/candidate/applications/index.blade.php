@@ -31,7 +31,7 @@
                         @endif
                         <a href="{{ route('messages.open', $app) }}" class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 text-sm"><i class="fas fa-comments mr-1"></i>Message</a>
                         @if($app->interview)
-                            <span class="text-green-600 dark:text-green-400 text-sm"><i class="fas fa-calendar-check mr-1"></i>Interview: {{ $app->interview->scheduled_date->format('M d') }}</span>
+                            <span class="text-green-600 dark:text-green-400 text-sm"><i class="fas fa-calendar-check mr-1"></i>Interview: {{ $app->interview->scheduled_date->format('M d, Y') }} at {{ $app->interview->scheduled_time->format('h:i A') }}</span>
                         @endif
                     </div>
                 </td>

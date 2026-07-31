@@ -42,4 +42,9 @@ class Application extends Model
     {
         return $this->hasOne(Conversation::class);
     }
+
+    public function letters()
+    {
+        return $this->hasMany(Letter::class);
+    }
 }

@@ -6,6 +6,13 @@
         <button @click="toggle()" class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none">
             <i class="fas" :class="isDark ? 'fa-sun text-yellow-400' : 'fa-moon text-gray-500'"></i>
         </button>
+        <a href="{{ route('candidate.notifications.index') }}" class="relative p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none">
+            <i class="fas fa-bell text-gray-500 dark:text-gray-400"></i>
+            @php($unreadCount = Auth::user()->notifications()->where('is_read', false)->count())
+            @if($unreadCount > 0)
+                <span class="absolute top-0 right-0 -mt-1 -mr-1 w-4 h-4 bg-red-500 text-white text-[10px] rounded-full flex items-center justify-center">{{ $unreadCount > 9 ? '9+' : $unreadCount }}</span>
+            @endif
+        </a>
         <span class="text-sm text-gray-600 dark:text-gray-400">{{ Auth::user()->name }}</span>
         <x-dropdown align="right" width="48">
             <x-slot name="trigger">

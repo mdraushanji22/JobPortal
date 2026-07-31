@@ -41,6 +41,27 @@
                         <button type="submit" class="mt-2 px-4 py-2 bg-gray-600 text-white rounded text-sm">Save Notes</button>
                     </form>
                 </div>
+                @if($application->status == 'selected')
+                <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                    <h3 class="font-semibold mb-3 dark:text-gray-100">Offer &amp; Joining Letters</h3>
+                    @php
+                        $offerLetter = $application->letters()->where('letter_type', 'offer')->whereIn('status', ['draft', 'sent'])->latest()->first();
+                        $joiningLetter = $application->letters()->where('letter_type', 'joining')->whereIn('status', ['draft', 'sent'])->latest()->first();
+                    @endphp
+                    <div class="flex flex-wrap gap-2">
+                        @if($offerLetter)
+                            <a href="{{ route('employer.letters.show', $offerLetter) }}" class="px-4 py-2 bg-blue-600 text-white rounded text-sm hover:bg-blue-700"><i class="fas fa-envelope-open-text mr-1"></i>View Offer Letter</a>
+                        @else
+                            <a href="{{ route('employer.letters.create', ['application' => $application, 'type' => 'offer']) }}" class="px-4 py-2 bg-blue-600 text-white rounded text-sm hover:bg-blue-700"><i class="fas fa-plus mr-1"></i>Generate Offer Letter</a>
+                        @endif
+                        @if($joiningLetter)
+                            <a href="{{ route('employer.letters.show', $joiningLetter) }}" class="px-4 py-2 bg-purple-600 text-white rounded text-sm hover:bg-purple-700"><i class="fas fa-envelope-open-text mr-1"></i>View Joining Letter</a>
+                        @else
+                            <a href="{{ route('employer.letters.create', ['application' => $application, 'type' => 'joining']) }}" class="px-4 py-2 bg-purple-600 text-white rounded text-sm hover:bg-purple-700"><i class="fas fa-plus mr-1"></i>Generate Joining Letter</a>
+                        @endif
+                    </div>
+                </div>
+                @endif
             </div>
         </div>
 

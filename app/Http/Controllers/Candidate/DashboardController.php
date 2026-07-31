@@ -18,6 +18,8 @@ class DashboardController extends Controller
             'appliedJobs' => Application::where('candidate_id', $candidate->id)->count(),
             'savedJobs' => SavedJob::where('candidate_id', $candidate->id)->count(),
             'interviews' => Interview::where('candidate_id', $candidate->id)->count(),
+            'unreadNotifications' => Auth::user()->notifications()->where('is_read', false)->count(),
+            'notifications' => Auth::user()->notifications()->latest()->take(5)->get(),
         ];
         
         return view('candidate.dashboard', $data);

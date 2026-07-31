@@ -15,6 +15,9 @@
         <a href="{{ route('candidate.applications.index') }}" class="flex items-center p-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded transition {{ request()->routeIs('candidate.applications.*') ? 'bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400' : '' }}">
             <i class="fas fa-file-alt w-5"></i><span class="ml-3">Applications</span>
         </a>
+        <a href="{{ route('candidate.letters.index') }}" class="flex items-center p-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded transition {{ request()->routeIs('candidate.letters.*') ? 'bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400' : '' }}">
+            <i class="fas fa-envelope-open-text w-5"></i><span class="ml-3">My Letters</span>
+        </a>
         <a href="{{ route('candidate.saved-jobs.index') }}" class="flex items-center p-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded transition {{ request()->routeIs('candidate.saved-jobs.*') ? 'bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400' : '' }}">
             <i class="fas fa-bookmark w-5"></i><span class="ml-3">Saved Jobs</span>
         </a>
