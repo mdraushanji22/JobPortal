@@ -18,7 +18,8 @@ A full-featured job portal built with **Laravel 12**, **Tailwind CSS**, and **Al
 
 | Page                | Screenshot                                                      |
 | ------------------- | --------------------------------------------------------------- |
-| Homepage            | c:\Users\mdrau\OneDrive\Pictures\Screenshots\Screenshot (4).png |
+| Homepage            | <img width="960" height="540" alt="Screenshot (4)" src="https://github.com/user-attachments/assets/0c8d9383-3c46-42cd-b2b7-f3de3ad373fc" />
+|
 | Job Listings        | ![Job Listings](screenshots/jobs.png)                           |
 | Job Detail          | ![Job Detail](screenshots/job-detail.png)                       |
 | Login               | ![Login](screenshots/login.png)                                 |
