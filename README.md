@@ -12,6 +12,21 @@
 
 A full-featured job portal built with **Laravel 12**, **Tailwind CSS**, and **Alpine.js** where candidates can search and apply for jobs, employers can post and manage vacancies, and admins can oversee the entire platform.
 
+## Screenshots
+
+> Create a `screenshots/` folder in the project root and put your images there (PNG/JPG). The examples below show the most useful pages to capture.
+
+| Page | Screenshot |
+|------|------------|
+| Homepage | ![Home](screenshots/home.png) |
+| Job Listings | ![Job Listings](screenshots/jobs.png) |
+| Job Detail | ![Job Detail](screenshots/job-detail.png) |
+| Login | ![Login](screenshots/login.png) |
+| Register | ![Register](screenshots/register.png) |
+| Candidate Dashboard | ![Candidate Dashboard](screenshots/candidate-dashboard.png) |
+| Employer Dashboard | ![Employer Dashboard](screenshots/employer-dashboard.png) |
+| Admin Dashboard | ![Admin Dashboard](screenshots/admin-dashboard.png) |
+
 ## Tech Stack
 
 | Layer      | Technology                                                          |
