@@ -16,32 +16,33 @@ A full-featured job portal built with **Laravel 12**, **Tailwind CSS**, and **Al
 
 > Create a `screenshots/` folder in the project root and put your images there (PNG/JPG). The examples below show the most useful pages to capture.
 
-| Page | Screenshot |
-|------|------------|
-| Homepage | ![Home](screenshots/home.png) |
-| Job Listings | ![Job Listings](screenshots/jobs.png) |
-| Job Detail | ![Job Detail](screenshots/job-detail.png) |
-| Login | ![Login](screenshots/login.png) |
-| Register | ![Register](screenshots/register.png) |
-| Candidate Dashboard | ![Candidate Dashboard](screenshots/candidate-dashboard.png) |
-| Employer Dashboard | ![Employer Dashboard](screenshots/employer-dashboard.png) |
-| Admin Dashboard | ![Admin Dashboard](screenshots/admin-dashboard.png) |
+| Page                | Screenshot                                                               |
+| ------------------- | ------------------------------------------------------------------------ |
+| Homepage            | ![Home](c:\Users\mdrau\OneDrive\Pictures\Screenshots\Screenshot (4).png) |
+| Job Listings        | ![Job Listings](screenshots/jobs.png)                                    |
+| Job Detail          | ![Job Detail](screenshots/job-detail.png)                                |
+| Login               | ![Login](screenshots/login.png)                                          |
+| Register            | ![Register](screenshots/register.png)                                    |
+| Candidate Dashboard | ![Candidate Dashboard](screenshots/candidate-dashboard.png)              |
+| Employer Dashboard  | ![Employer Dashboard](screenshots/employer-dashboard.png)                |
+| Admin Dashboard     | ![Admin Dashboard](screenshots/admin-dashboard.png)                      |
 
 ## Tech Stack
 
-| Layer      | Technology                                                          |
-|------------|---------------------------------------------------------------------|
-| Backend    | PHP 8.2+, Laravel 12, MySQL                                         |
-| Frontend   | Blade, Tailwind CSS 4, Alpine.js, Font Awesome 6                    |
-| Build      | Vite (Laravel Vite Plugin)                                          |
-| PDF        | barryvdh/laravel-dompdf                                             |
-| Mail       | Laravel Mail (Mailable), SMTP                                        |
-| Testing    | PHPUnit (Feature tests)                                             |
-| Extras     | Laravel Tinker, Laravel Breeze (authentication scaffolding)         |
+| Layer    | Technology                                                  |
+| -------- | ----------------------------------------------------------- |
+| Backend  | PHP 8.2+, Laravel 12, MySQL                                 |
+| Frontend | Blade, Tailwind CSS 4, Alpine.js, Font Awesome 6            |
+| Build    | Vite (Laravel Vite Plugin)                                  |
+| PDF      | barryvdh/laravel-dompdf                                     |
+| Mail     | Laravel Mail (Mailable), SMTP                               |
+| Testing  | PHPUnit (Feature tests)                                     |
+| Extras   | Laravel Tinker, Laravel Breeze (authentication scaffolding) |
 
 ## Implemented Features
 
 ### Public / Guest
+
 - Homepage with platform stats (jobs, employers, candidates), featured jobs, and job categories with live counts.
 - Public job listing page with **search** (title, description, skills) and **filters** (category, employment type, workplace type, experience level, location, salary) plus **sorting**.
 - Public job detail pages (only active + approved jobs are visible; inactive/unapproved return 404).
@@ -49,6 +50,7 @@ A full-featured job portal built with **Laravel 12**, **Tailwind CSS**, and **Al
 - Authentication, registration (candidate / employer roles), email verification, password reset.
 
 ### Candidate
+
 - Personal dashboard and profile management (bio, skills, education, experience).
 - Browse & view jobs, apply to jobs, and **withdraw** applications.
 - **Resume management**: upload multiple resumes, mark one as default, download, and delete.
@@ -57,6 +59,7 @@ A full-featured job portal built with **Laravel 12**, **Tailwind CSS**, and **Al
 - Notifications center (read individual or all notifications).
 
 ### Employer
+
 - Company profile management (logo, description, industry, website, contact details).
 - **Job management**: create, edit, close/reopen, and delete jobs; view job status (pending / approved / rejected).
 - Application inbox: view applicants, update application status, and **schedule interviews**.
@@ -65,6 +68,7 @@ A full-featured job portal built with **Laravel 12**, **Tailwind CSS**, and **Al
 - Receive notifications when messages/letters are issued.
 
 ### Admin
+
 - Admin dashboard with stats (total employers, candidates, jobs, applications, active jobs, pending jobs, today's applications).
 - **Employer management**: list, view, verify, suspend.
 - **Candidate management**: list and view profiles.
@@ -74,6 +78,7 @@ A full-featured job portal built with **Laravel 12**, **Tailwind CSS**, and **Al
 - **Reports** page and **Site Settings** management.
 
 ### Shared / Cross-Cutting
+
 - **Role-based access control** via `RoleMiddleware` (`role:admin`, `role:employer`, `role:candidate`).
 - **Conversation-based messaging** between candidates and employers per application, including file **attachments** (preview + download).
 - **In-app notifications** for candidates (letters issued, etc.).
@@ -100,11 +105,11 @@ Key models: `User`, `Employer`, `Candidate`, `JobListing`, `Category`, `Skill`, 
 
 Seeded by `DatabaseSeeder` (`AdminSeeder` + `CategorySeeder`):
 
-| Role      | Email                  | Password |
-|-----------|------------------------|----------|
-| Admin     | admin@example.com      | password |
-| Employer  | employer@example.com   | password |
-| Candidate | candidate@example.com  | password |
+| Role      | Email                 | Password |
+| --------- | --------------------- | -------- |
+| Admin     | admin@example.com     | password |
+| Employer  | employer@example.com  | password |
+| Candidate | candidate@example.com | password |
 
 The employer belongs to **Tech Corp Inc.** (verified).
 

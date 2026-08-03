@@ -16,10 +16,10 @@
             <x-admin-header />
             <main class="flex-1 overflow-y-auto p-6">
                 @if(session('success'))
-                    <div class="bg-green-100 dark:bg-green-900/50 border border-green-400 dark:border-green-700 text-green-700 dark:text-green-300 px-4 py-3 rounded mb-4">{{ session('success') }}</div>
+                    <x-alert type="success">{{ session('success') }}</x-alert>
                 @endif
                 @if(session('error'))
-                    <div class="bg-red-100 dark:bg-red-900/50 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-300 px-4 py-3 rounded mb-4">{{ session('error') }}</div>
+                    <x-alert type="error">{{ session('error') }}</x-alert>
                 @endif
                 @yield('content')
             </main>
