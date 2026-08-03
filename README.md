@@ -16,16 +16,16 @@ A full-featured job portal built with **Laravel 12**, **Tailwind CSS**, and **Al
 
 > Create a `screenshots/` folder in the project root and put your images there (PNG/JPG). The examples below show the most useful pages to capture.
 
-| Page                | Screenshot                                                               |
-| ------------------- | ------------------------------------------------------------------------ |
-| Homepage            | ![Home](c:\Users\mdrau\OneDrive\Pictures\Screenshots\Screenshot (4).png) |
-| Job Listings        | ![Job Listings](screenshots/jobs.png)                                    |
-| Job Detail          | ![Job Detail](screenshots/job-detail.png)                                |
-| Login               | ![Login](screenshots/login.png)                                          |
-| Register            | ![Register](screenshots/register.png)                                    |
-| Candidate Dashboard | ![Candidate Dashboard](screenshots/candidate-dashboard.png)              |
-| Employer Dashboard  | ![Employer Dashboard](screenshots/employer-dashboard.png)                |
-| Admin Dashboard     | ![Admin Dashboard](screenshots/admin-dashboard.png)                      |
+| Page                | Screenshot                                                      |
+| ------------------- | --------------------------------------------------------------- |
+| Homepage            | c:\Users\mdrau\OneDrive\Pictures\Screenshots\Screenshot (4).png |
+| Job Listings        | ![Job Listings](screenshots/jobs.png)                           |
+| Job Detail          | ![Job Detail](screenshots/job-detail.png)                       |
+| Login               | ![Login](screenshots/login.png)                                 |
+| Register            | ![Register](screenshots/register.png)                           |
+| Candidate Dashboard | ![Candidate Dashboard](screenshots/candidate-dashboard.png)     |
+| Employer Dashboard  | ![Employer Dashboard](screenshots/employer-dashboard.png)       |
+| Admin Dashboard     | ![Admin Dashboard](screenshots/admin-dashboard.png)             |
 
 ## Tech Stack
 
