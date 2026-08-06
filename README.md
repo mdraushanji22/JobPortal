@@ -190,3 +190,4 @@ tests/Feature/             # Feature tests (letters, messaging, auth, profile)
 
 This is a demo/learning project built on the Laravel framework, which is open-sourced under the [MIT license](https://opensource.org/licenses/MIT).
 Name: Md Raushan Jilani 
+Email: mdraushanji22@gmail.com
