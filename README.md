@@ -16,16 +16,48 @@ A full-featured job portal built with **Laravel 12**, **Tailwind CSS**, and **Al
 
 > Create a `screenshots/` folder in the project root and put your images there (PNG/JPG). The examples below show the most useful pages to capture.
 
+<<<<<<< HEAD
+| Page | Screenshot |
+| ---- | ---------- |
+
+| Page     | Screenshot                                                                                                                                  |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Homepage | <img width="960" height="540" alt="Screenshot (4)" src="https://github.com/user-attachments/assets/0c8d9383-3c46-42cd-b2b7-f3de3ad373fc" /> |
+
+|
+| Job Listings | <img width="1920" height="1080" alt="Screenshot (5)" src="https://github.com/user-attachments/assets/ec87fdbf-c953-4a72-9d0c-c385fe87266f" />
+|
+| Job Detail | <img width="1912" height="889" alt="Screenshot 2026-08-03 133212" src="https://github.com/user-attachments/assets/b771f1dc-19be-419d-a777-37fcf2e46031" />
+|
+| Login | <img width="1920" height="1080" alt="Screenshot (6)" src="https://github.com/user-attachments/assets/25f97e67-fe2b-4b07-b7ef-0e0c81676bf6" />
+|
+| Register | <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8caf7bdc-6a4c-458d-9788-a91c920c5e83" />
+|
+| Candidate Dashboard | <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fa33efcb-f043-481e-a8d9-f9e76037adec" />
+|
+| Employer Dashboard | <img width="1920" height="1080" alt="Screenshot (14)" src="https://github.com/user-attachments/assets/9711f869-5649-4d7a-ac37-1ae5e7c886b4" />
+|
+| Admin Dashboard | <img width="1920" height="1080" alt="Screenshot (15)" src="https://github.com/user-attachments/assets/9e122422-c960-451a-987a-e20e1601da7e" /> |
+=======
 | Page                | Screenshot                                                      |
 | ------------------- | --------------------------------------------------------------- |
-| Homepage            | c:\Users\mdrau\OneDrive\Pictures\Screenshots\Screenshot (4).png |
-| Job Listings        | ![Job Listings](screenshots/jobs.png)                           |
-| Job Detail          | ![Job Detail](screenshots/job-detail.png)                       |
-| Login               | ![Login](screenshots/login.png)                                 |
-| Register            | ![Register](screenshots/register.png)                           |
-| Candidate Dashboard | ![Candidate Dashboard](screenshots/candidate-dashboard.png)     |
-| Employer Dashboard  | ![Employer Dashboard](screenshots/employer-dashboard.png)       |
-| Admin Dashboard     | ![Admin Dashboard](screenshots/admin-dashboard.png)             |
+| Homepage            | <img width="960" height="540" alt="Screenshot (4)" src="https://github.com/user-attachments/assets/0c8d9383-3c46-42cd-b2b7-f3de3ad373fc" />
+|
+| Job Listings        | <img width="1920" height="1080" alt="Screenshot (5)" src="https://github.com/user-attachments/assets/ec87fdbf-c953-4a72-9d0c-c385fe87266f" />
+                          |
+| Job Detail          | <img width="1912" height="889" alt="Screenshot 2026-08-03 133212" src="https://github.com/user-attachments/assets/b771f1dc-19be-419d-a777-37fcf2e46031" />
+                      |
+| Login               | <img width="1920" height="1080" alt="Screenshot (6)" src="https://github.com/user-attachments/assets/25f97e67-fe2b-4b07-b7ef-0e0c81676bf6" />
+                                |
+| Register            | <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8caf7bdc-6a4c-458d-9788-a91c920c5e83" />
+                       |
+| Candidate Dashboard | <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fa33efcb-f043-481e-a8d9-f9e76037adec" />
+    |
+| Employer Dashboard  | <img width="1920" height="1080" alt="Screenshot (14)" src="https://github.com/user-attachments/assets/9711f869-5649-4d7a-ac37-1ae5e7c886b4" />
+      |
+| Admin Dashboard     | <img width="1920" height="1080" alt="Screenshot (15)" src="https://github.com/user-attachments/assets/9e122422-c960-451a-987a-e20e1601da7e" />
+            |
+>>>>>>> 959645b7bce6dcc8e6d8814c479aa211f6736d90
 
 ## Tech Stack
 
