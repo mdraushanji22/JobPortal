@@ -10,23 +10,20 @@ use Illuminate\Support\Facades\Auth;
 
 class ApplicationController extends Controller
 {
-    public function index(JobListing $job = null)
+    public function index(Request $request)
     {
         $employerId = Auth::user()->employer->id;
-        
-        if ($job) {
-            if ($job->employer_id !== $employerId) abort(403);
-            $applications = Application::where('job_listing_id', $job->id)
-                ->with('candidate.user', 'resume')
-                ->paginate(10);
-        } else {
-            $applications = Application::whereHas('jobListing', function ($q) use ($employerId) {
-                $q->where('employer_id', $employerId);
-            })->with('jobListing', 'candidate.user', 'resume')->paginate(10);
-        }
+        $jobId = $request->query('job_id');
+
+        $applications = Application::whereHas('jobListing', function ($q) use ($employerId, $jobId) {
+            $q->where('employer_id', $employerId);
+            if ($jobId) {
+                $q->where('id', $jobId);
+            }
+        })->with('jobListing', 'candidate.user', 'resume')->paginate(10);
 
         $jobs = JobListing::where('employer_id', $employerId)->get();
-        return view('employer.applications.index', compact('applications', 'jobs', 'job'));
+        return view('employer.applications.index', compact('applications', 'jobs'));
     }
 
     public function show(Application $application)

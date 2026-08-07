@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Candidate;
 
 use App\Http\Controllers\Controller;
+use App\Models\Application;
 use App\Models\Resume;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -67,9 +68,18 @@ class ResumeController extends Controller
     {
         $user = Auth::user();
         $isOwner = $user->isCandidate() && $user->candidate && $resume->candidate_id === $user->candidate->id;
+        $isApplicantEmployer = $user->isEmployer() && $user->employer && Application::query()
+            ->where('candidate_id', $resume->candidate_id)
+            ->where('resume_id', $resume->id)
+            ->whereHas('jobListing', fn ($query) => $query->where('employer_id', $user->employer->id))
+            ->exists();
 
-        if (!$isOwner && !$user->isEmployer() && !$user->isAdmin()) {
+        if (!$isOwner && !$isApplicantEmployer && !$user->isAdmin()) {
             abort(403);
+        }
+
+        if (!Storage::disk('public')->exists($resume->file_path)) {
+            abort(404);
         }
 
         return Storage::disk('public')->download($resume->file_path, $resume->title . '.' . $resume->file_type);

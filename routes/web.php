@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -9,6 +10,13 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/jobs', [App\Http\Controllers\JobController::class, 'index'])->name('jobs.index');
 Route::get('/jobs/{job}', [App\Http\Controllers\JobController::class, 'show'])->name('jobs.show');
+
+// Keep the account settings screen available to every authenticated user.
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
@@ -30,7 +38,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/employers/{employer}/suspend', [App\Http\Controllers\Admin\EmployerController::class, 'suspend'])->name('employers.suspend');
 
         Route::resource('/candidates', App\Http\Controllers\Admin\CandidateController::class);
-        Route::get('/candidates/{candidate}/show', [App\Http\Controllers\Admin\CandidateController::class, 'show'])->name('candidates.show');
 
         Route::get('/jobs', [App\Http\Controllers\Admin\JobController::class, 'index'])->name('jobs.index');
         Route::get('/jobs/{job}/edit', [App\Http\Controllers\Admin\JobController::class, 'edit'])->name('jobs.edit');

@@ -22,6 +22,8 @@ class ApplicationController extends Controller
 
     public function create(JobListing $job)
     {
+        $this->ensureJobIsOpen($job);
+
         $candidate = Auth::user()->candidate;
         $resumes = Resume::where('candidate_id', $candidate->id)->get();
         
@@ -38,12 +40,20 @@ class ApplicationController extends Controller
 
     public function store(Request $request, JobListing $job)
     {
+        $this->ensureJobIsOpen($job);
+
         $candidate = Auth::user()->candidate;
 
         $validated = $request->validate([
             'cover_letter' => 'nullable|string',
             'resume_id' => 'nullable|exists:resumes,id',
         ]);
+
+        if (isset($validated['resume_id']) && !Resume::whereKey($validated['resume_id'])
+            ->where('candidate_id', $candidate->id)
+            ->exists()) {
+            abort(403);
+        }
 
         $existingApplication = Application::where('job_listing_id', $job->id)
             ->where('candidate_id', $candidate->id)->first();
@@ -64,6 +74,13 @@ class ApplicationController extends Controller
 
         return redirect()->route('candidate.applications.index')
             ->with('success', 'Application submitted successfully.');
+    }
+
+    private function ensureJobIsOpen(JobListing $job): void
+    {
+        if (!$job->is_active || $job->status !== 'approved' || ($job->application_deadline && $job->application_deadline->isPast())) {
+            abort(404);
+        }
     }
 
     public function withdraw(Application $application)

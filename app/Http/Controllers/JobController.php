@@ -48,7 +48,10 @@ class JobController extends Controller
         }
 
         $sortField = $request->get('sort', 'created_at');
-        $sortDir = $request->get('direction', 'desc');
+        $sortField = in_array($sortField, ['created_at', 'salary_min', 'salary_max', 'title'], true)
+            ? $sortField
+            : 'created_at';
+        $sortDir = $request->get('direction', 'desc') === 'asc' ? 'asc' : 'desc';
         $query->orderBy($sortField, $sortDir);
 
         $jobs = $query->paginate(12)->withQueryString();

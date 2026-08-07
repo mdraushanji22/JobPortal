@@ -16,7 +16,7 @@
         <h2 class="text-lg font-semibold mb-4 dark:text-white">Employer Report</h2>
         <table class="w-full dark:text-gray-300"><thead><tr><th class="text-left py-2">Company</th><th class="text-left py-2">Jobs</th></tr></thead><tbody>
         @foreach($employers as $emp)
-        <tr><td class="py-1">{{ $emp->company_name }}</td><td>{{ $emp->jobListings->count() }}</td></tr>
+        <tr><td class="py-1">{{ $emp->company_name }}</td><td>{{ $emp->job_listings_count }}</td></tr>
         @endforeach
         </tbody></table>
     </div>
@@ -24,7 +24,7 @@
         <h2 class="text-lg font-semibold mb-4 dark:text-white">Candidate Report</h2>
         <table class="w-full dark:text-gray-300"><thead><tr><th class="text-left py-2">Name</th><th class="text-left py-2">Applications</th></tr></thead><tbody>
         @foreach($candidates as $can)
-        <tr><td class="py-1">{{ $can->user->name }}</td><td>{{ $can->applications->count() }}</td></tr>
+        <tr><td class="py-1">{{ $can->user->name }}</td><td>{{ $can->applications_count }}</td></tr>
         @endforeach
         </tbody></table>
     </div>
@@ -37,14 +37,14 @@ new Chart(document.getElementById('jobsChart'), {
     type: 'bar',
     data: {
         labels: {!! json_encode(range(1, 12)) !!},
-        datasets: [{ label: 'Jobs', data: {!! json_encode(array_values($monthlyJobs->toArray())) !!}, backgroundColor: '#3b82f6' }]
+        datasets: [{ label: 'Jobs', data: {!! json_encode(array_values($monthlyJobs)) !!}, backgroundColor: '#3b82f6' }]
     }
 });
 new Chart(document.getElementById('applicationsChart'), {
     type: 'line',
     data: {
         labels: {!! json_encode(range(1, 12)) !!},
-        datasets: [{ label: 'Applications', data: {!! json_encode(array_values($monthlyApplications->toArray())) !!}, borderColor: '#10b981', tension: 0.3 }]
+        datasets: [{ label: 'Applications', data: {!! json_encode(array_values($monthlyApplications)) !!}, borderColor: '#10b981', tension: 0.3 }]
     }
 });
 </script>

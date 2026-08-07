@@ -16,7 +16,7 @@
                 <td class="px-6 py-4">{{ $app->jobListing->employer->company_name }}</td>
                 <td class="px-6 py-4">
                     @php
-                        $statusColors = ['applied' => 'blue', 'shortlisted' => 'yellow', 'selected' => 'green', 'interview_scheduled' => 'purple', 'hired' => 'green', 'rejected' => 'red'];
+                        $statusColors = ['applied' => 'blue', 'shortlisted' => 'yellow', 'selected' => 'green', 'interview_scheduled' => 'purple', 'rejected' => 'red'];
                         $color = $statusColors[$app->status] ?? 'gray';
                     @endphp
                     <span class="px-2 py-1 rounded text-xs bg-{{ $color }}-100 dark:bg-{{ $color }}-900/30 text-{{ $color }}-800 dark:text-{{ $color }}-300">{{ str_replace('_', ' ', ucfirst($app->status)) }}</span></td>
