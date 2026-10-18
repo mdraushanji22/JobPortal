@@ -11,7 +11,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/jobs', [App\Http\Controllers\JobController::class, 'index'])->name('jobs.index');
 Route::get('/jobs/{job}', [App\Http\Controllers\JobController::class, 'show'])->name('jobs.show');
 
-// Keep the account settings screen available to every authenticated user.
+// Keep the account settings screen available to every authenticated users.
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
